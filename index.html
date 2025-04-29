@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Level Up Portfolio</title>
+</head>
+<body>
+    <!-- Titre principal -->
+  <header>
+    <h1 class="main-title">[ Nom du Héros : LASSENY MBOUROU Julien Karl ]</h1>
+    <button id="openWindowBtn">Afficher Stat Window</button>
+  </header>
+
+  <!-- Fenêtre de statut (initialement cachée) -->
+  <section id="statWindow" class="stat-window hidden">
+    <h2>Statut du Développeur</h2>
+    
+    <div class="section">
+      <h3>Profil</h3>
+      <p>Nom : LMJK</p>
+      <p>Niveau : 12</p>
+      <p>Classe : Développeur Multiclassé</p>
+    </div>
+
+    <div class="section">
+        <h3>Compétences</h3>
+        <p>HTML</p>
+        <div class="skill-bar"><div class="skill-bar-fill" data-skill="85"></div></div>
+      
+        <p>CSS</p>
+        <div class="skill-bar"><div class="skill-bar-fill" data-skill="70"></div></div>
+      
+        <p>JavaScript</p>
+        <div class="skill-bar"><div class="skill-bar-fill" data-skill="60"></div></div>
+      
+        <p>Go</p>
+        <div class="skill-bar"><div class="skill-bar-fill" data-skill="40"></div></div>
+      </div>      
+
+    <div class="section">
+      <h3>Inventaire</h3>
+      <p>Visual Studio Code, Figma, Git, SQLite, etc.</p>
+    </div>
+
+    <div class="section">
+      <h3>Quêtes Réalisées</h3>
+      <ul>
+        <li>Refonte de site vitrine</li>
+        <li>Mini-jeu HTML/JS</li>
+        <li>Design UI pour application mobile</li>
+      </ul>
+    </div>
+
+    <button id="closeWindowBtn">Fermer</button>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

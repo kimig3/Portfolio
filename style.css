@@ -1,0 +1,135 @@
+/* --- RESET DE BASE --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background: radial-gradient(circle at center, #0a0a0a 40%, #000000 100%);
+    color: #e0f7ff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  
+  /* --- TITRE ET BOUTON PRINCIPAL --- */
+  header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .main-title {
+    font-size: 2rem;
+    color: #00bfff;
+    text-shadow: 0 0 5px #00bfff, 0 0 10px #0077aa;
+    margin-bottom: 15px;
+  }
+  
+  #openWindowBtn {
+    padding: 10px 20px;
+    background-color: transparent;
+    color: #00bfff;
+    border: 2px solid #00bfff;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  #openWindowBtn:hover {
+    background-color: #00bfff;
+    color: #000;
+  }
+  
+  /* --- STAT WINDOW --- */
+  .stat-window {
+    background-color: rgba(0, 34, 64, 0.85);
+    border: 2px solid #00bfff;
+    box-shadow: 0 0 20px #00bfff;
+    border-radius: 15px;
+    padding: 20px;
+    max-width: 600px;
+    width: 90%;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+  }
+  
+  /* Cacher la stat window au départ */
+  .hidden {
+    display: none;
+  }
+  
+  /* --- SECTIONS INTERNE --- */
+  .section {
+    margin-top: 20px;
+  }
+  
+  .section h3 {
+    color: #66ccff;
+    border-bottom: 1px solid #66ccff;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+  }
+  
+  ul {
+    list-style: none;
+    padding-left: 15px;
+  }
+  
+  ul li::before {
+    content: "• ";
+    color: #00bfff;
+  }
+  
+  /* --- BOUTON FERMER --- */
+  #closeWindowBtn {
+    margin-top: 20px;
+    padding: 8px 15px;
+    background-color: #222;
+    border: 1px solid #00bfff;
+    color: #00bfff;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  #closeWindowBtn:hover {
+    background-color: #00bfff;
+    color: #000;
+  }
+  
+  /* --- Animation d'apparition HUD --- */
+.stat-window {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    display: none;
+  }
+  
+  .stat-window.active {
+    display: block;
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  /* --- Barres de compétences --- */
+  .skill-bar {
+    width: 100%;
+    background-color: #111;
+    border: 1px solid #00bfff;
+    border-radius: 5px;
+    margin: 5px 0;
+    overflow: hidden;
+  }
+  
+  .skill-bar-fill {
+    height: 12px;
+    width: 0;
+    background: linear-gradient(to right, #00bfff, #0080ff);
+    border-radius: 5px;
+    transition: width 1s ease-out;
+  }
+  
