@@ -1,60 +1,323 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Level Up Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Statut du joueur - Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <!-- Titre principal -->
-  <header>
-    <h1 class="main-title">[ Nom du Héros : LASSENY MBOUROU Julien Karl ]</h1>
-    <button id="openWindowBtn">Afficher Stat Window</button>
-  </header>
 
-  <!-- Fenêtre de statut (initialement cachée) -->
-  <section id="statWindow" class="stat-window hidden">
-    <h2>Statut du Développeur</h2>
-    
-    <div class="section">
-      <h3>Profil</h3>
-      <p>Nom : LMJK</p>
-      <p>Niveau : 12</p>
-      <p>Classe : Développeur Multiclassé</p>
-    </div>
 
-    <div class="section">
-        <h3>Compétences</h3>
-        <p>HTML</p>
-        <div class="skill-bar"><div class="skill-bar-fill" data-skill="85"></div></div>
-      
-        <p>CSS</p>
-        <div class="skill-bar"><div class="skill-bar-fill" data-skill="70"></div></div>
-      
-        <p>JavaScript</p>
-        <div class="skill-bar"><div class="skill-bar-fill" data-skill="60"></div></div>
-      
-        <p>Go</p>
-        <div class="skill-bar"><div class="skill-bar-fill" data-skill="40"></div></div>
-      </div>      
+  <!-- === EN TETE === -->
 
-    <div class="section">
-      <h3>Inventaire</h3>
-      <p>Visual Studio Code, Figma, Git, SQLite, etc.</p>
-    </div>
-
-    <div class="section">
-      <h3>Quêtes Réalisées</h3>
-      <ul>
-        <li>Refonte de site vitrine</li>
-        <li>Mini-jeu HTML/JS</li>
-        <li>Design UI pour application mobile</li>
-      </ul>
-    </div>
-
-    <button id="closeWindowBtn">Fermer</button>
+  <section id="intro-container">
+    <h1 class="intro-title">Bienvenue dans le domaine du Monarque des Ombres</h1>
+    <img src="/assets/img/img_intro.jpg" alt="Photo de profil" class="holo-avatar">
+    <div id="auto-typer" class="typer-text"></div>
   </section>
+  
+  <!-- ===IMAGES FANTOMES === -->
+
+  <div id="ghost-container"></div>
+  
+  <!-- === BOUTON OUVERTURE === -->
+  <div class="center-screen">
+    <button id="openWindowBtn" class="main-btn">Afficher la fenêtre de statut</button>
+  </div>
+
+  <!-- === CONTAINER PRINCIPAL DE TOUTES LES FENÊTRES === -->
+  <div id="statWindow" class="window hidden">
+
+    <!-- === NAVIGATION ENTRE LES FENÊTRES === -->
+    <nav class="stat-menu">
+      <button class="menu-tab active" data-tab="profile">Profil</button>
+      <button class="menu-tab" data-tab="skills">Compétences</button>
+      <button class="menu-tab" data-tab="quests">Quêtes</button>
+      <button class="menu-tab" data-tab="inventory">Inventaire</button>
+      <button class="menu-tab" data-tab="journal">Journal</button>
+    </nav>
+    
+
+    <!-- === FENÊTRE 1 : PROFIL === -->
+    <section id="tab-profile" class="status-window tab-content active">
+      <h2>👤 Profil du joueur</h2>
+      <p>Nom : <span id="playerName">LASSENY MBOUROU Jullien Karl</span></p>
+      <p>Niveau : <span id="playerLevel">27</span></p>
+      <p>Classe : <span id="playerClass">Concepteur Développeur d'Applications</span></p>
+    
+      <h3>🎖️ Titres / Certificats</h3>
+      <ul id="titlesList">
+        <li class="title-item">
+          <span class="title-name">Initiez-vous au traitement de texte</span>
+          <button class="btn-detail">Détails</button>
+          <div class="details-box hidden">
+            Certificat obtenu sur OpenClassrooms nov. 2021.
+            <img src="/assets/img/certificat/openclassrooms_logo.jpg" alt="Certificat 1" class="certificate-thumb">
+          </div>
+        </li>
+      </ul>
+    </section>
+    
+
+    <!-- === FENÊTRE 2 : COMPÉTENCES === -->
+    <section id="tab-skills" class="status-window tab-content hidden">
+      <h2>📚 Compétences</h2>
+
+      <div class="skill">
+        <span class="skill-name">HTML</span>
+        <span class="skill-rank">Niveau : C</span>
+        <div class="skill-bar">
+          <div class="skill-bar-fill" data-skill="40"></div>
+        </div>
+        <button class="btn-detail">Voir effets</button>
+        <div class="details-box hidden">sert à structurer le contenu d'une page web (titres, paragraphes, images, etc.).</div>
+      </div>
+
+      <div class="skill">
+        <span class="skill-name">CSS</span>
+        <span class="skill-rank">Niveau : D</span>
+        <div class="skill-bar">
+          <div class="skill-bar-fill" data-skill="25"></div>
+        </div>
+        <button class="btn-detail">Voir effets</button>
+        <div class="details-box hidden">sert à styliser le contenu d'une page web (couleurs, tailles, mise en page, animations).</div>
+      </div>
+
+      <div class="skill">
+        <span class="skill-name">javaScript</span>
+        <span class="skill-rank">Niveau : C</span>
+        <div class="skill-bar">
+          <div class="skill-bar-fill" data-skill="40"></div>
+        </div>
+        <button class="btn-detail">Voir effets</button>
+        <div class="details-box hidden">rend les pages web interactives (clics, formulaires dynamiques, animations, etc.).</div>
+      </div>
+
+      <div class="skill">
+        <span class="skill-name">GO</span>
+        <span class="skill-rank">Niveau : E</span>
+        <div class="skill-bar">
+          <div class="skill-bar-fill" data-skill="10"></div>
+        </div>
+        <button class="btn-detail">Voir effets</button>
+        <div class="details-box hidden">langage back-end rapide et efficace, idéal pour les serveurs web et systèmes distribués.</div>
+      </div>
+
+      <div class="skill">
+        <span class="skill-name">PHP</span>
+        <span class="skill-rank">Niveau : E</span>
+        <div class="skill-bar">
+          <div class="skill-bar-fill" data-skill="15"></div>
+        </div>
+        <button class="btn-detail">Voir effets</button>
+        <div class="details-box hidden">langage côté serveur souvent utilisé pour générer des pages web dynamiques (comme WordPress).</div>
+      </div>
+
+      <div class="skill">
+        <span class="skill-name">PYTHON</span>
+        <span class="skill-rank">Niveau : E</span>
+        <div class="skill-bar">
+          <div class="skill-bar-fill" data-skill="15"></div>
+        </div>
+        <button class="btn-detail">Voir effets</button>
+        <div class="details-box hidden">langage polyvalent utilisé en data science, web, IA, scripts et automatisation.</div>
+      </div>
+
+      <div class="skill">
+        <span class="skill-name">SQL</span>
+        <span class="skill-rank">Niveau : E</span>
+        <div class="skill-bar">
+          <div class="skill-bar-fill" data-skill="30"></div>
+        </div>
+        <button class="btn-detail">Voir effets</button>
+        <div class="details-box hidden">langage pour interroger et manipuler des bases de données relationnelles.</div>
+      </div>
+
+      <div class="skill">
+        <span class="skill-name">MySQL</span>
+        <span class="skill-rank">Niveau : E</span>
+        <div class="skill-bar">
+          <div class="skill-bar-fill" data-skill="30"></div>
+        </div>
+        <button class="btn-detail">Voir effets</button>
+        <div class="details-box hidden">système de gestion de base de données (SGBD) qui utilise SQL pour gérer les données.</div>
+      </div>
+
+      <div class="skill">
+        <span class="skill-name">DOCKER</span>
+        <span class="skill-rank">Niveau : E</span>
+        <div class="skill-bar">
+          <div class="skill-bar-fill" data-skill="20"></div>
+        </div>
+        <button class="btn-detail">Voir effets</button>
+        <div class="details-box hidden">sert à créer, exécuter et déployer des applications dans des conteneurs isolés, facilitant la portabilité et la configuration.</div>
+      </div>
+
+
+      <!-- autres compétences -->
+    </section>
+
+    <!-- === FENÊTRE 3 : QUÊTES ACCOMPLIES === -->
+    <section id="tab-quests" class="status-window tab-content hidden">
+      <h2>🗺️ Quêtes accomplies</h2>
+
+      <div class="quest-category">
+        <h3>💻 Programmation</h3>
+        <div class="quest">
+          <h4>Refonte site Ubinair</h4>
+          <p><strong>Commanditaire :</strong> Ubinair</p>
+          <p><strong>Objectif :</strong> Refonte complète du site vitrine</p>
+          <p><strong>Outils :</strong> HTML, CSS, JS, PHP</p>
+          <button class="btn-detail">Détails</button>
+          <div class="details-box hidden">
+            <p>
+              Expérience client, intégration responsive, sécurité et performance.
+              (à cause d'une close de confidentialitén les détails de cette mission ne
+              peuvent être fournis.)
+            </p>
+            <div class="quest-media">
+              <div class="quest-media carousel-wrapper">
+                <button class="carousel-btn left">&#8592;</button>
+                <div class="carousel-inner">
+              <img src="/assets/img/ubinair/Screenshot 2025-05-14 110852.png" alt="screenshot 1" class="holo-image"/>
+            </div>
+            <button class="carousel-btn right">&#8594;</button>
+          </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="quest">
+          <h4>FORUM</h4>
+          <p><strong>Commanditaire :</strong> ZONE01</p>
+          <p><strong>Objectif :</strong> Créer un Forum permettant </p>
+          <p><strong>Outils :</strong> HTML, CSS, GO, SQLite, docker</p>
+          <button class="btn-detail">Détails</button>
+          <div class="details-box hidden">
+            <p>
+              Vous devez utiliser SQLite, Vous devez gérer les erreurs du site Web, le statut HTTP,
+              Vous devez gérer toutes sortes d’erreurs techniques, Le code doit respecter les bonnes pratiques.
+            </p>
+            <div class="quest-media">
+              <div class="quest-media carousel-wrapper">
+                <button class="carousel-btn left">&#8592;</button>
+                <div class="carousel-inner">
+              <img src="/assets/img/forum/img1.png" alt="screenshot 1" class="holo-image"/>
+              <img src="/assets/img/forum/img2.png" alt="screenshot 2" class="holo-image"/>
+              <img src="/assets/img/forum/img3.png" alt="screenshot 3" class="holo-image"/>
+              <img src="/assets/img/forum/img4.png" alt="screenshot 4" class="holo-image"/>
+              <img src="/assets/img/forum/img5.png" alt="screenshot 5" class="holo-image"/>
+              <img src="/assets/img/forum/img6.png" alt="screenshot 6" class="holo-image"/>
+              <img src="/assets/img/forum/img7.png" alt="screenshot 7" class="holo-image"/>
+              <img src="/assets/img/forum/img8.png" alt="screenshot 8" class="holo-image"/>
+            </div>
+            <button class="carousel-btn right">&#8594;</button>
+          </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- autres catégories comme Design / Artistique -->
+    </section>
+
+    <!-- === FENÊTRE 4 : INVENTAIRE === -->
+    <section id="tab-inventory" class="status-window tab-content hidden">
+      <h2>🎒 Inventaire</h2>
+      <div class="inventory-grid">
+        <div class="inventory-item" data-desc="Gère et versionne ton code.">
+          <img src="/assets/icon/github_black.svg" alt="github" />
+        </div>
+
+        <div class="inventory-item" data-desc="Éditeur de code rapide et léger">
+          <img src="/assets/icon/vscode.svg" alt="VS Code" />
+        </div>
+
+        <div class="inventory-item" data-desc= "Structure les pages web.">
+          <img src="/assets/icon/html5.svg" alt="HTML" />
+        </div>
+
+        <div class="inventory-item" data-desc="Habille le contenu web.">
+          <img src="/assets/icon/css3.svg" alt="css" />
+        </div>
+
+        <div class="inventory-item" data-desc="Anime et rend interactif.">
+          <img src="/assets/icon/javascript.svg" alt="javaScript" />
+        </div>
+
+        <div class="inventory-item" data-desc="Web dynamique côté serveur.">
+          <img src="/assets/icon/php.svg" alt="PHP" />
+        </div>
+
+        <div class="inventory-item" data-desc="Script polyvalent et intuitif.">
+          <img src="/assets/icon/python.svg" alt="Python" />
+        </div>
+
+        <div class="inventory-item" data-desc="Serveur rapide et fiable.">
+          <img src="/assets/icon/go.svg" alt="Golang" />
+        </div>
+
+        <div class="inventory-item" data-desc="Interroge les bases de données.">
+          <img src="/assets/icon/sql.svg" alt="SQL" />
+        </div>
+
+        <div class="inventory-item" data-desc="Emballage d'apps en conteneur.">
+          <img src="/assets/icon/docker.svg" alt="docker" />
+        </div>
+
+        <div class="inventory-item" data-desc="Design d’interface collaboratif.">
+          <img src="/assets/icon/figma.svg" alt="figma" />
+        </div>
+
+        <div class="inventory-item" data-desc="Création graphique simplifiée.">
+          <img src="/assets/icon/canva.svg" alt="canva" />
+        </div>
+
+      </div>
+      <p class="info">Survole un objet pour voir sa description.</p>
+    </section>
+
+    <!-- === FENÊTRE 5 : JOURNAL === -->
+    <section id="tab-journal" class="status-window tab-content hidden">
+      <h2>📓 Journal du Héros</h2>
+
+      <div class="journal-links">
+        <a href="https://www.linkedin.com/in/karl-lasseny" target="_blank" class="journal-icon linkedin">
+          <img src="/assets/icon/linkedin.svg" alt="LinkedIn">
+          <span>LinkedIn</span>
+        </a>
+        <a href="https://github.com/kimig3" target="_blank" class="journal-icon github">
+          <img src="/assets/icon/github.svg" alt="GitHub">
+          <span>GitHub</span>
+        </a>
+    
+        <div class="journal-icon cv" id="cvPreview">
+          <img src="/assets/cv/cv.png" alt="CV miniature">
+          <span>Voir le CV</span>
+        </div>
+      </div>
+    
+      <!-- Modal CV -->
+      <div id="cv-modal" class="modal hidden">
+        <span class="modal-close">&times;</span>
+        <img id="cv-modal-img" src="/assets/cv/cv.png" alt="CV zoom">
+        <a href="/assets/cv/CV_LASSENY.pdf" download class="cv-download">📥 Télécharger le CV</a>
+      </div>    </section>
+
+    <!-- === BOUTON FERMETURE === -->
+    <div class="close-zone">
+      <button id="closeWindowBtn">Fermer</button>
+    </div>
+
+  </div>
+
+  <div id="cert-modal" class="modal hidden">
+    <span class="modal-close">&times;</span>
+    <img id="modal-img" src="" alt="Certificat agrandi">
+  </div>
+  
 
   <script src="script.js"></script>
 </body>
